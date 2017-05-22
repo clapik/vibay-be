@@ -1,0 +1,35 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "a02f6d6d10a731cddddbc9e88ad356c5f456c07d642fc909d9f8071a3e786c42be8dec022d158d5ee5a7209498a53c423fc0753734d98a1e8188f80bfd79f2922483bc7e48ffd9873d3d92c5ae3336ce6556a2e310becf6a0f370b4bbaede590e8105b560588f84a4f7ad5a2dbbab57f09d9471706fff92eedfccbdc1d8775d90da464c677d20106fa801b03b99efa4d39b648bcaf838fa5b8f3589e9230a5bf67a187732c5828fd1d049b83adad4f952cbaadd358ecc79b4d082b2551029dc0a6227bcecff2e74a967c71ca56d55e15fa122896369239e69102149fb34aee4e968b82ca34185dcce901fe9cbe66d43cf8e0e08dc2e1173ab6f6293d52ee28c9",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "service": "users",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "sqlite": "sqlite://vibay_be.sqlite"
+}
